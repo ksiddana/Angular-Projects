@@ -6,4 +6,4 @@
 
 ### Computer Solutions
 
-<span class="snapshot"><img src="01-computerSolutions/images/explorer.png" alt=""></span>
+<span class="snapshot"><img src="01-computerSolutions/images/computerSolutions.png" alt=""></span>

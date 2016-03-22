@@ -1,46 +1,29 @@
-var app = angular.module("computer", ['ngRoute'])
+angular.module("explorer", ['ui.router',
+  'explorer.main',
+  'explorer.search',
+])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.
-    when('/main', {
-      templateUrl: 'main/main.html',
+.config(['$stateProvider','$urlRouterProvider', 
+  function($stateProvider, $urlRouterProvider) {
+  
+  $stateProvider
+
+    .state('main', {
+      url: '/main',
+      templateUrl: '/main/main.html',
       controller: 'MainController'
-    }).
-    when('/about', {
-      templateUrl: 'about/about.html',
-      controller: 'AboutController'
-    }).
-    when('/services', {
-      templateUrl: 'services/services.html',
-      controller: 'ServicesController'
-    }).
-    when('/contact', {
-      templateUrl: 'contact/contact.html',
-      controller: 'ContactController'
-    }).
-    otherwise({redirectTo:'main/main.html'})
-
-}])
-
-
-.controller('MainController', ['$scope', '$http', 
-  function($scope, $http) {
-  $http.get('services/services.json').then(function(response){
-    $scope.services = response.data;
-  });
-}])
-
-.controller('ServicesController', ['$scope', '$http', 
-  function($scope, $http) {
-  $http.get('services/services.json').then(function(response){
-    $scope.services = response.data;
-  });
-}])
-
-.controller('ContactController', ['$scope', '$http',
-  function($scope, $http) {
-    $http.get('contact/locations.json').then(function(response) {
-      $scope.locations = response.data;
     })
 
-  }])
+    .state('search', {
+      url:'/search',
+      templateUrl: 'search/search.html',
+      controller: 'SearchController'
+    })
+
+    .state('login', {
+      url: '/login',
+      templateUrl: 'login/login.html',
+      controller: 'LoginController'
+    })
+    
+}])

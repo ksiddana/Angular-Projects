@@ -1,0 +1,49 @@
+<div class="container main-content">
+  <div class="form-group">
+      <form ng-submit="searchSong(songTitle)">
+        <input type="text"
+               class="form-control"
+               ng-model="songTitle"
+               placeholder="Search Song ..."/>
+        <button 
+        type="submit" 
+        class="btn btn-primary"
+        >
+        Search</button>
+      </form>
+
+      <pre>{{ songTitle }}</pre>
+
+      <div class="row">
+      <div class="col-md-12">
+
+      <table class="table table-bordered">
+
+        <tr>
+          <th>#</th>
+          <th>Song Title</th>
+          <th>Tags</th>
+          <th>Stream</th>
+          <th>Artwork</th>
+          <th>Play Song</th>
+        </tr>
+
+        <tr ng-repeat="song in songs"
+            ng-style="{
+         'background-color': $index == selectedIndex ? 'lightgray' : ''
+         }">
+          <td>{{ $index }}</td>
+          <td>{{ song.title }}</td>
+          <td>{{ song.tag_list }}</td>
+          <td><a href="{{ song.permalink_url }}">Play</a></td>
+          <td><img ng-src="{{ song.artwork_url}}" /></td>
+          <td><iframe height="166" src="{{song.iframe}}"></iframe></td>
+        </tr>
+
+
+      </table>
+
+    </div>
+
+  </div>
+</div>

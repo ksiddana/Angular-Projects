@@ -1,0 +1,40 @@
+{
+  "name": "Hart-Interview",
+  "version": "0.0.1",
+  "description": "Coding Challenge Angular",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "karma start karma.conf.js"
+  },
+  "engines": {
+    "node": "5.3.0",
+    "npm": "3.3.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksiddana/codechallenge_angular_sc.git"
+  },
+  "author": "Karun Siddana",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "bower": "^1.7.2",
+    "express": "^4.13.3",
+    "method-override": "^2.3.5",
+    "moment": "^2.11.1",
+    "morgan": "^1.6.1",
+    "request": "^2.69.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-jasmine": "^0.3.8",
+    "node-env-file": "^0.1.8"
+  }
+}
